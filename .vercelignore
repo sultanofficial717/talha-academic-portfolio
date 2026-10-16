@@ -1,0 +1,11 @@
+.git
+.github
+markdown_generator/
+talkmap/
+talkmap.py
+talkmap.ipynb
+*.ipynb
+Gemfile
+Gemfile.lock
+_drafts/
+_sass/
