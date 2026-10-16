@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talha Rehman | AI Researcher</title>
+  <meta name="description" content="Academic portfolio of Talha Rehman, final-year BS AI student at Bahria University Islamabad. Research in NLP, RAG, verifiable AI, and reproducible ML evaluation.">
+  <meta name="author" content="Talha Rehman">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Talha Rehman | AI Researcher">
+  <meta property="og:description" content="Research portfolio of Talha Rehman. Final-year BS AI student working on NLP, RAG systems with provenance, and reproducible ML evaluation.">
+  <meta property="og:url" content="https://sultanofficial717.github.io/">
+
+  <style>
+    :root {
+      --bg: #fcfcfd;
+      --surface: #ffffff;
+      --surface-subtle: #f8fafc;
+      --text: #1a202c;
+      --text-muted: #4a5568;
+      --text-subtle: #718096;
+      --border: #e2e8f0;
+      --border-subtle: #edf2f7;
+      --accent: #1F3A5F;
+      --accent-hover: #152740;
+      --accent-tint: #eaf0f8;
+      --focus-ring: #2b6cb0;
+      
+      /* Status badges */
+      --badge-accepted-bg: #edf7ed;
+      --badge-accepted-text: #1b5e20;
+      --badge-accepted-border: #c8e6c9;
+      
+      --badge-review-bg: #eef4fa;
+      --badge-review-text: #1F3A5F;
+      --badge-review-border: #c9dcf0;
+
+      --badge-prep-bg: #f3f4f6;
+      --badge-prep-text: #4b5563;
+      --badge-prep-border: #e5e7eb;
+
+      --badge-dev-bg: #fff8eb;
+      --badge-dev-text: #8a5300;
+      --badge-dev-border: #fed7aa;
+      
+      --font-body: Charter, "Bitstream Charter", "Sitka Text", Cambria, "Source Serif 4", Georgia, serif;
+      --font-ui: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      
+      --max-width: 760px;
+      --nav-height: 58px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-subtle: #1c2128;
+      --text: #e6edf3;
+      --text-muted: #9ba3af;
+      --text-subtle: #768390;
+      --border: #30363d;
+      --border-subtle: #21262d;
+      --accent: #7fa8d8;
+      --accent-hover: #9bbfe9;
+      --accent-tint: #182638;
+      --focus-ring: #58a6ff;
+
+      --badge-accepted-bg: #122818;
+      --badge-accepted-text: #7ee787;
+      --badge-accepted-border: #23552d;
+
+      --badge-review-bg: #152438;
+      --badge-review-text: #93c5fd;
+      --badge-review-border: #233f61;
+
+      --badge-prep-bg: #1c2128;
+      --badge-prep-text: #adbac7;
+      --badge-prep-border: #373e47;
+
+      --badge-dev-bg: #2d2011;
+      --badge-dev-text: #fbd38d;
+      --badge-dev-border: #5a3d1b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + 20px);
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    /* Accessibility Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 20px;
+      background: var(--accent);
+      color: #ffffff;
+      padding: 8px 14px;
+      text-decoration: none;
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 0 0 4px 4px;
+      z-index: 1000;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 0;
+      outline: 2px solid var(--focus-ring);
+    }
+
+    /* Sticky Navigation */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--bg);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      backdrop-filter: blur(8px);
+      background-color: rgba(252, 252, 253, 0.94);
+    }
+    [data-theme="dark"] .site-nav {
+      background-color: rgba(13, 17, 23, 0.94);
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .nav-brand:hover {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.1s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-cv {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      text-decoration: none;
+      font-family: var(--font-ui);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      transition: background-color 0.15s ease;
+      white-space: nowrap;
+    }
+    [data-theme="dark"] .btn-cv {
+      background-color: var(--accent-tint);
+      color: var(--accent) !important;
+      border-color: var(--accent);
+    }
+    .btn-cv:hover {
+      background-color: var(--accent-hover);
+    }
+    [data-theme="dark"] .btn-cv:hover {
+      background-color: var(--border);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 5px 9px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Main Container */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 44px 20px 80px 20px;
+    }
+
+    /* Section Hierarchy */
+    section {
+      margin-bottom: 56px;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 2.15rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: var(--font-ui);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 22px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--accent);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration-thickness: 2px;
+    }
+
+    /* Header / Hero Section */
+    .header-section {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-affiliation {
+      font-family: var(--font-ui);
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .hero-thesis {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .contact-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--text-subtle);
+      padding-bottom: 1px;
+    }
+    .contact-bar a:hover {
+      color: var(--accent);
+      border-bottom-style: solid;
+    }
+
+    .opportunity-banner {
+      margin-top: 20px;
+      padding: 10px 14px;
+      background-color: var(--accent-tint);
+      border-left: 3px solid var(--accent);
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      color: var(--text);
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* Research Interests */
+    .interests-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      list-style: none;
+    }
+
+    .interest-tag {
+      font-family: var(--font-ui);
+      font-size: 0.8125rem;
+      background-color: var(--surface-subtle);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 5px 12px;
+      border-radius: 3px;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 0.725rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 2px 7px;
+      border-radius: 3px;
+      line-height: 1.4;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      margin-left: 6px;
+    }
+    .badge-accepted {
+      background-color: var(--badge-accepted-bg);
+      color: var(--badge-accepted-text);
+      border-color: var(--badge-accepted-border);
+    }
+    .badge-review {
+      background-color: var(--badge-review-bg);
+      color: var(--badge-review-text);
+      border-color: var(--badge-review-border);
+    }
+    .badge-prep {
+      background-color: var(--badge-prep-bg);
+      color: var(--badge-prep-text);
+      border-color: var(--badge-prep-border);
+    }
+    .badge-dev {
+      background-color: var(--badge-dev-bg);
+      color: var(--badge-dev-text);
+      border-color: var(--badge-dev-border);
+    }
+
+    /* Featured Research Cards */
+    .research-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .card-header {
+      margin-bottom: 16px;
+    }
+
+    .card-title-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .card-meta {
+      font-family: var(--font-ui);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .card-details {
+      display: grid;
+      gap: 12px;
+      font-size: 0.975rem;
+    }
+
+    .detail-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .detail-label {
+      font-family: var(--font-ui);
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .detail-content {
+      color: var(--text);
+    }
+
+    .reviewer-note {
+      margin-top: 4px;
+      padding: 8px 12px;
+      background-color: var(--surface-subtle);
+      border-left: 2px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .card-footer {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+      font-family: var(--font-ui);
+      font-size: 0.8125rem;
+    }
+
+    /* Publications List */
+    .publications-list {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+    }
+
+    .pub-item {
+      padding: 16px;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    .pub-status-row {
+      margin-bottom: 6px;
+    }
+
+    .pub-title {
+      font-weight: 600;
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .pub-meta {
+      font-family: var(--font-ui);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .integrity-note {
+      margin-top: 12px;
+      font-family: var(--font-ui);
+      font-size: 0.775rem;
+      color: var(--text-subtle);
+      font-style: italic;
+    }
+
+    /* Experience */
+    .timeline {
+      display: grid;
+      gap: 20px;
+    }
+
+    .timeline-item {
+      border-left: 2px solid var(--border);
+      padding-left: 18px;
+    }
+
+    .timeline-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .timeline-meta {
+      font-family: var(--font-ui);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .timeline-bullets {
+      padding-left: 20px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .timeline-bullets li {
+      margin-bottom: 4px;
+    }
+
+    /* Projects / Other */
+    .simple-card {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background-color: var(--surface);
+      margin-bottom: 12px;
+    }
+
+    /* Leadership & Community */
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      list-style: none;
+    }
+
+    .community-item {
+      padding: 12px 14px;
+      background-color: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .community-item strong {
+      color: var(--text);
+    }
+
+    /* Education */
+    .education-box {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background-color: var(--surface);
+    }
+
+    .coursework-list {
+      margin-top: 10px;
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      font-family: var(--font-ui);
+      font-size: 0.95rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+    }
+
+    .contact-label {
+      width: 90px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* TODO markers */
+    .todo-marker {
+      background-color: rgba(234, 88, 12, 0.12);
+      color: #ea580c;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      border: 1px dashed rgba(234, 88, 12, 0.4);
+    }
+    [data-theme="dark"] .todo-marker {
+      background-color: rgba(251, 146, 60, 0.15);
+      color: #fdba74;
+      border-color: rgba(251, 146, 60, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 20px;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-ui);
+      font-size: 0.8125rem;
+      color: var(--text-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 680px) {
+      .nav-links {
+        display: none; /* Keep clean on small mobile, essential actions remain */
+      }
+      .detail-item {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+      .detail-label {
+        margin-top: 6px;
+      }
+      h1 {
+        font-size: 1.75rem;
+      }
+      .research-card {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sticky Navigation -->
+  <header class="site-nav">
+    <div class="nav-container">
+      <a href="#top" class="nav-brand">Talha Rehman</a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <!-- Download CV PDF link: change href to your actual PDF path (e.g., files/Talha_Rehman_CV.pdf) -->
+        <a href="files/Talha_Rehman_CV.pdf" class="btn-cv" download>Download CV (PDF)</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- Header / Hero Section (First Screen Clarity) -->
+    <header class="header-section" id="top">
+      <h1>Talha Rehman</h1>
+      <p class="hero-affiliation">
+        BS Artificial Intelligence, Bahria University Islamabad<br>
+        Final year &bull; Graduating July 2027
+      </p>
+      
+      <p class="hero-thesis">
+        &ldquo;I work on AI systems that understand what people mean, and can show where their answers come from.&rdquo;
+      </p>
+
+      <div class="contact-bar">
+        <span>Email: <a href="mailto:talharehman717@gmail.com">talharehman717@gmail.com</a></span>
+        <span>GitHub: <a href="https://github.com/sultanofficial717" target="_blank" rel="noopener noreferrer">github.com/sultanofficial717</a></span>
+        <span>LinkedIn: <a href="https://linkedin.com/in/[TODO]" target="_blank" rel="noopener noreferrer"><span class="todo-marker">[TODO: LinkedIn URL]</span></a></span>
+        <span>Scholar/ORCID: <span class="todo-marker">[TODO: Google Scholar or ORCID if available]</span></span>
+      </div>
+
+      <div class="opportunity-banner">
+        <strong>Notice:</strong> Currently open and applying for research internships (Max Planck Institutes for Computer Science) and funded master&rsquo;s research abroad.
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" aria-labelledby="heading-about">
+      <h2 id="heading-about">About</h2>
+      <p>
+        Final-year AI student with research experience in NLP, retrieval-augmented generation and reproducible machine learning evaluation. Programming frustrated me at first, which led to a question I kept asking: why can't machines learn how people naturally communicate? I now work on NLP pipelines, RAG systems that cite their sources, and careful model testing. I also lead the AI Club at Bahria University and organize community events. Open to research internships and master's research.
+      </p>
+
+      <div>
+        <h3 style="font-family: var(--font-ui); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-top: 24px;">Research Interests</h3>
+        <ul class="interests-grid">
+          <li class="interest-tag">Reproducible ML evaluation and benchmarking</li>
+          <li class="interest-tag">Data systems for machine learning</li>
+          <li class="interest-tag">Information retrieval, NLP and RAG</li>
+          <li class="interest-tag">Multimodal AI</li>
+          <li class="interest-tag">Trustworthy, verifiable AI</li>
+          <li class="interest-tag">Applied security</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Featured Research Section -->
+    <section id="research" aria-labelledby="heading-research">
+      <h2 id="heading-research">Featured Research</h2>
+      
+      <!-- Card 1: Brazilian Energy Forecasting -->
+      <article class="research-card">
+        <div class="card-header">
+          <div class="card-title-row">
+            <h3>News-based forecasting of Brazilian energy prices</h3>
+          </div>
+          <div class="card-meta">
+            DataInsight Lab, FAST-NUCES &bull; Aug 2026 to present
+          </div>
+        </div>
+
+        <div class="card-details">
+          <div class="detail-item">
+            <span class="detail-label">Problem</span>
+            <span class="detail-content">Can news text improve short-term electricity price forecasts?</span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">What I did</span>
+            <span class="detail-content">
+              Processed ~490K Portuguese articles down to ~30K with MinHash/LSH deduplication and topical filtering; translated with NLLB, labeled topics with Gemini, scored sentiment with FinBERT; combined with PLD/CMO price data; used 1024-d BGE embeddings with supervised PLS and walk-forward validation.
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">Result</span>
+            <span class="detail-content">
+              <strong>R&sup2; 0.8755</strong> for 12-hour forecasting, a <strong>5.0 percentage-point gain</strong> over market-only features, checked with Diebold-Mariano and bootstrap tests.
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">What I learned</span>
+            <span class="detail-content">
+              Without rigorous deduplication and strict leakage prevention across temporal walk-forward splits, textual features easily produce illusory gains in volatile time series. Statistical hypothesis testing (Diebold-Mariano) is essential to establish whether textual sentiment adds verifiable predictive power over financial baseline signals.
+            </span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <strong>Repository:</strong> <a href="https://github.com/sultanofficial717/brazil-energy" target="_blank" rel="noopener noreferrer">github.com/sultanofficial717/brazil-energy</a>
+        </div>
+      </article>
+
+      <!-- Card 2: DSPD -->
+      <article class="research-card">
+        <div class="card-header">
+          <div class="card-title-row">
+            <h3>DSPD: A Device-Bound Stateless Password Derivation Scheme</h3>
+            <span class="badge badge-accepted">Accepted &bull; FIT 2026</span>
+          </div>
+          <div class="card-meta">
+            23rd International Conference on Frontiers of Information Technology (FIT 2026), Islamabad
+          </div>
+        </div>
+
+        <div class="card-details">
+          <div class="detail-item">
+            <span class="detail-label">Problem</span>
+            <span class="detail-content">
+              Deriving strong, distinct cryptographic credentials without maintaining an attack-vulnerable central vault or stateful credential synchronization database.
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">What I did</span>
+            <span class="detail-content">
+              Constructed a derivation scheme using HKDF-SHA256 + Argon2id + hardware-resident device secret, incorporating per-application version counters for rotation; benchmarked derivation latency across five hardware environments.
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">Result</span>
+            <span class="detail-content">
+              Deterministic credential derivation executed in <strong>under 220 ms</strong> across five heterogeneous hardware environments, resilient against offline brute-force attacks without central storage.
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">Reviewers Note</span>
+            <span class="detail-content">
+              <div class="reviewer-note">
+                What reviewers asked for: Clearer backup and recovery mechanisms, along with more careful and qualified threat model claims.
+              </div>
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">What I learned</span>
+            <span class="detail-content">
+              Practical cryptographic system design demands balancing strict computational memory hardness against consumer client device constraints; disaster recovery procedures must be treated with the same formal threat modeling as primary derivation paths.
+            </span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <strong>Paper / Code:</strong> <span class="todo-marker">[TODO: Link to DSPD paper / repository]</span>
+        </div>
+      </article>
+
+      <!-- Card 3: AutismLens -->
+      <article class="research-card">
+        <div class="card-header">
+          <div class="card-title-row">
+            <h3>AutismLens: Multimodal RAG for Autism Screening Interpretation</h3>
+            <span class="badge badge-dev">In Development</span>
+          </div>
+          <div class="card-meta">
+            Final Year Project &bull; In active development
+          </div>
+        </div>
+
+        <div class="card-details">
+          <div class="detail-item">
+            <span class="detail-label">Problem</span>
+            <span class="detail-content">
+              Clinical interpretation of paper-based autism screening forms is labor-intensive and prone to manual transcription mistakes, requiring verifiable grounding against official diagnostic scoring guidelines.
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">What I did</span>
+            <span class="detail-content">
+              OCR and OpenCV mark detection extract item-level scores; Sentence-BERT + ChromaDB retrieve from the official scoring manual so reports cite manual passages and clinicians can verify them.
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">Result</span>
+            <span class="detail-content">
+              Functional end-to-end prototype extracting item-level assessment marks and producing diagnostic summary drafts with direct provenance citations back to verified manual sections.
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">What I learned</span>
+            <span class="detail-content">
+              Clinical decision support tools must never operate as generative black boxes. Explicit citation and traceable manual provenance are foundational for practitioner trust and verification.
+            </span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <strong>Repository / Demo:</strong> <span class="todo-marker">[TODO: Link to AutismLens repository / demo]</span>
+        </div>
+      </article>
+
+      <!-- Card 4: Cardiomegaly CDS Dashboard -->
+      <article class="research-card">
+        <div class="card-header">
+          <div class="card-title-row">
+            <h3>Cardiomegaly Clinical Decision Support Dashboard (Chest X-ray)</h3>
+            <span class="badge badge-review">Under Review</span>
+          </div>
+          <div class="card-meta">
+            Submitted to a NeurIPS 2026 Workshop
+          </div>
+        </div>
+
+        <div class="card-details">
+          <div class="detail-item">
+            <span class="detail-label">Problem</span>
+            <span class="detail-content">
+              Assisting clinical practitioners in identifying cardiomegaly from chest radiographs with interpretable visual grounding and decision confidence.
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">What I did</span>
+            <span class="detail-content">
+              Engineered a clinical decision support dashboard evaluating chest X-ray radiographs with deep learning vision models for cardiomegaly detection and visual confirmation.
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">Result</span>
+            <span class="detail-content">
+              Constructed an operational interactive interface for radiographic evaluation; manuscript submitted to a NeurIPS 2026 Workshop and currently undergoing peer review.
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">What I learned</span>
+            <span class="detail-content">
+              Diagnostic machine learning models in radiology require transparent confidence calibration and intuitive visual decision boundaries to ensure medical practitioners can reliably audit borderline cases.
+            </span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <strong>Repository / Manuscript:</strong> <span class="todo-marker">[TODO: Link to Cardiomegaly dashboard repository / paper]</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Publications and Manuscripts -->
+    <section id="publications" aria-labelledby="heading-publications">
+      <h2 id="heading-publications">Publications and Manuscripts</h2>
+      
+      <ul class="publications-list">
+        <!-- Item 1: DSPD -->
+        <li class="pub-item">
+          <div class="pub-status-row">
+            <span class="badge badge-accepted">Accepted</span>
+          </div>
+          <span class="pub-title">DSPD: A Device-Bound Stateless Password Derivation Scheme</span>
+          <div class="pub-meta">
+            <span class="todo-marker">[TODO: Exact author list]</span> &bull; 
+            <em>23rd International Conference on Frontiers of Information Technology (FIT 2026)</em>, Islamabad, Pakistan.
+          </div>
+        </li>
+
+        <!-- Item 2: Cardiomegaly -->
+        <li class="pub-item">
+          <div class="pub-status-row">
+            <span class="badge badge-review">Under Review</span>
+          </div>
+          <span class="pub-title">Cardiomegaly Clinical Decision Support Dashboard (Chest X-ray)</span>
+          <div class="pub-meta">
+            <span class="todo-marker">[TODO: Exact author list]</span> &bull; 
+            Submitted to a <em>NeurIPS 2026 Workshop</em>.
+          </div>
+        </li>
+
+        <!-- Item 3: Multimodal RAG paper -->
+        <li class="pub-item">
+          <div class="pub-status-row">
+            <span class="badge badge-prep">In Preparation</span>
+          </div>
+          <span class="pub-title">Multimodal Retrieval-Augmented Generation Paper</span>
+          <div class="pub-meta">
+            <span class="todo-marker">[TODO: Exact author list / Manuscript Title]</span> &bull; 
+            In preparation with <em>Cradle Lab</em>.
+          </div>
+        </li>
+
+        <!-- Item 4: Cybersecurity & Ransomware ML Survey -->
+        <li class="pub-item">
+          <div class="pub-status-row">
+            <span class="badge badge-prep">In Preparation</span>
+          </div>
+          <span class="pub-title">Survey on Cybersecurity and the Role of Machine Learning in Ransomware</span>
+          <div class="pub-meta">
+            <span class="todo-marker">[TODO: Exact author list]</span> &bull; 
+            In preparation.
+          </div>
+        </li>
+      </ul>
+
+      <p class="integrity-note">
+        * Status labels strictly reflect current verification state: Accepted, Under Review, or In Preparation. Nothing is listed as published unless in print.
+      </p>
+    </section>
+
+    <!-- Other Projects -->
+    <section id="projects" aria-labelledby="heading-projects">
+      <h2 id="heading-projects">Other Projects</h2>
+      
+      <article class="simple-card">
+        <h3 style="font-size: 1.1rem; margin-bottom: 4px;">EasyMatch</h3>
+        <p style="font-size: 0.95rem; margin-bottom: 8px;">
+          AI opportunity matching platform designed for university students to discover relevant research, academic, and professional roles.
+        </p>
+        <div style="font-family: var(--font-ui); font-size: 0.8125rem;">
+          <strong>Repository:</strong> <a href="https://github.com/sultanofficial717/porfile-match" target="_blank" rel="noopener noreferrer">github.com/sultanofficial717/porfile-match</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" aria-labelledby="heading-experience">
+      <h2 id="heading-experience">Experience</h2>
+
+      <div class="timeline">
+        <!-- Role 1 -->
+        <div class="timeline-item">
+          <div class="timeline-title">Full-Stack AI Development Intern</div>
+          <div class="timeline-meta">DataInsight Lab, FAST-NUCES &bull; Aug 2026 to present</div>
+          <ul class="timeline-bullets">
+            <li>Leading news-based short-term forecasting pipeline development for Brazilian power market settlement prices (PLD/CMO).</li>
+            <li>Engineered text filtering and MinHash/LSH deduplication processing ~490K news items; integrated NLLB translation, Gemini topic classification, and FinBERT sentiment modeling.</li>
+            <li>Conducted walk-forward temporal cross-validation with statistical significance verification via Diebold-Mariano and bootstrap tests.</li>
+          </ul>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="timeline-item">
+          <div class="timeline-title">Volunteer Research Assistant</div>
+          <div class="timeline-meta">Cradle Lab &bull; Jul 2025 to Sep 2025</div>
+          <ul class="timeline-bullets">
+            <li>Contributed to research methodology, architecture planning, and experiment design for a multimodal RAG manuscript.</li>
+            <li>Surveyed and synthesized 30+ research papers in multimodal information retrieval and evaluation benchmarks.</li>
+          </ul>
+        </div>
+
+        <!-- Role 3 -->
+        <div class="timeline-item">
+          <div class="timeline-title">AI Intern</div>
+          <div class="timeline-meta">Center of Excellence in Artificial Intelligence &bull; Sep 2024 to Dec 2024</div>
+          <ul class="timeline-bullets">
+            <li>Annotated and verified medical foot-image datasets for automated clinical screening.</li>
+            <li>Conducted dataset quality control and validation benchmarks for a diabetes-assessment computer vision model.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership and Community -->
+    <section id="community" aria-labelledby="heading-community">
+      <h2 id="heading-community">Leadership &amp; Community</h2>
+      
+      <ul class="community-grid">
+        <li class="community-item">
+          <strong>Founder</strong>, HAT Technologies (applied AI agency)
+        </li>
+        <li class="community-item">
+          <strong>Founder</strong>, TechFusion (400+ participants, 20+ universities)
+        </li>
+        <li class="community-item">
+          <strong>Lead</strong>, AI Club, Bahria University
+        </li>
+        <li class="community-item">
+          <strong>Organizer</strong>, GDG Islamabad
+        </li>
+      </ul>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" aria-labelledby="heading-education">
+      <h2 id="heading-education">Education</h2>
+
+      <div class="education-box">
+        <h3 style="font-size: 1.15rem; margin-bottom: 2px;">BS Artificial Intelligence</h3>
+        <div style="font-family: var(--font-ui); font-size: 0.875rem; color: var(--text-muted); margin-bottom: 8px;">
+          Bahria University Islamabad &bull; Sep 2023 to Jul 2027 (expected)
+        </div>
+        <p style="font-size: 0.95rem; margin-bottom: 10px;">
+          <strong>CGPA:</strong> 3.11 / 4.00
+        </p>
+
+        <div class="coursework-list">
+          <div>
+            <strong>Selected Completed Coursework:</strong> Machine Learning, Deep Learning, Reinforcement Learning, Design and Analysis of Algorithms, Robotics, Operating Systems, Database Systems.
+          </div>
+          <div style="margin-top: 4px;">
+            <strong>In Progress:</strong> Natural Language Processing, Computer Vision, Parallel and Distributed Computing.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="heading-contact">
+      <h2 id="heading-contact">Contact</h2>
+
+      <ul class="contact-list">
+        <li class="contact-item">
+          <span class="contact-label">Email:</span>
+          <span><a href="mailto:talharehman717@gmail.com">talharehman717@gmail.com</a></span>
+        </li>
+        <li class="contact-item">
+          <span class="contact-label">GitHub:</span>
+          <span><a href="https://github.com/sultanofficial717" target="_blank" rel="noopener noreferrer">github.com/sultanofficial717</a></span>
+        </li>
+        <li class="contact-item">
+          <span class="contact-label">LinkedIn:</span>
+          <span><a href="https://linkedin.com/in/[TODO]" target="_blank" rel="noopener noreferrer"><span class="todo-marker">[TODO: LinkedIn URL]</span></a></span>
+        </li>
+        <li class="contact-item">
+          <span class="contact-label">Location:</span>
+          <span>Islamabad, Pakistan</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div>Talha Rehman &bull; Academic Portfolio</div>
+    <div>Updated October 2026</div>
+  </footer>
+
+  <script>
+    // Theme toggle script with system preference and localStorage persistence
+    (function() {
+      const toggleBtn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+
+      function getPreferredTheme() {
+        const stored = localStorage.getItem('theme');
+        if (stored) return stored;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+
+      function setTheme(theme) {
+        if (theme === 'dark') {
+          root.setAttribute('data-theme', 'dark');
+          toggleBtn.textContent = 'Light';
+          toggleBtn.setAttribute('aria-label', 'Switch to light theme');
+        } else {
+          root.removeAttribute('data-theme');
+          toggleBtn.textContent = 'Dark';
+          toggleBtn.setAttribute('aria-label', 'Switch to dark theme');
+        }
+        localStorage.setItem('theme', theme);
+      }
+
+      setTheme(getPreferredTheme());
+
+      toggleBtn.addEventListener('click', function() {
+        const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      });
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+          setTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
