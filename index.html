@@ -48,8 +48,10 @@
       --font-body: Charter, "Bitstream Charter", "Sitka Text", Cambria, "Source Serif 4", Georgia, serif;
       --font-ui: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
       --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      
-      --max-width: 760px;
+      --content-width: 760px;
+      --sidebar-width: 180px;
+      --layout-gap: 36px;
+      --max-width: 996px;
       --nav-height: 58px;
     }
 
@@ -237,11 +239,42 @@
       color: var(--accent);
     }
 
-    /* Main Container */
-    main {
+    /* Main Container & 2-Column Layout */
+    .page-layout {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 44px 20px 80px 20px;
+      display: grid;
+      grid-template-columns: var(--sidebar-width) minmax(0, var(--content-width));
+      gap: var(--layout-gap);
+      justify-content: center;
+      align-items: start;
+    }
+
+    .left-column {
+      width: var(--sidebar-width);
+    }
+
+    .photo-sticky-wrapper {
+      position: sticky;
+      top: calc(var(--nav-height) + 24px);
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 230px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background-color: var(--surface-subtle);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      display: block;
+    }
+
+    .main-column {
+      max-width: var(--content-width);
+      min-width: 0;
     }
 
     /* Section Hierarchy */
@@ -641,6 +674,24 @@
     }
 
     /* Responsive */
+    @media (max-width: 960px) {
+      .page-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-top: 28px;
+      }
+      .left-column {
+        width: 100%;
+      }
+      .photo-sticky-wrapper {
+        position: static;
+      }
+      .profile-photo {
+        width: 140px;
+        height: 180px;
+      }
+    }
+
     @media (max-width: 680px) {
       .nav-links {
         display: none; /* Keep clean on small mobile, essential actions remain */
@@ -686,9 +737,18 @@
     </div>
   </header>
 
-  <main id="content">
-    <!-- Header / Hero Section (First Screen Clarity) -->
-    <header class="header-section" id="top">
+  <main id="content" class="page-layout">
+    <!-- Left Column: Profile Picture -->
+    <aside class="left-column" aria-label="Profile Photo">
+      <div class="photo-sticky-wrapper">
+        <img src="profile.png" onerror="this.onerror=null; this.src='images/profile.png';" alt="Talha Rehman" class="profile-photo" width="180" height="230">
+      </div>
+    </aside>
+
+    <!-- Main Center Column: All Text Displayed -->
+    <div class="main-column">
+      <!-- Header / Hero Section (First Screen Clarity) -->
+      <header class="header-section" id="top">
       <h1>Talha Rehman</h1>
       <p class="hero-affiliation">
         BS Artificial Intelligence, Bahria University Islamabad<br>
@@ -1109,6 +1169,7 @@
         </li>
       </ul>
     </section>
+    </div>
   </main>
 
   <footer>
